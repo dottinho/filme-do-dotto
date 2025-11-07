@@ -44,82 +44,16 @@
 
     
         </div>
-<!-- Adicione isso no final do <body> do seu site -->
-<div id="chatbot" style="position: fixed; bottom: 20px; right: 20px; width: 300px; background: rgb(102, 103, 172); border: 2px solid #007bff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-    <div style="background: #007bff; color: rgb(0, 0, 0); padding: 10px; border-radius: 8px 8px 0 0;">
-        <strong>Assistente de Filmes</strong>
-        <button onclick="fecharChat()" style="float: right; background: none; border: none; color: white; cursor: pointer;">×</button>
-    </div>
-    <div id="chat-messages" style="height: 200px; overflow-y: auto; padding: 10px; font-size: 14px;">
-        <div><strong>Assistente:</strong> Olá! Sou seu assistente de filmes. 😊</div>
-    </div>
-    <div style="padding: 10px; border-top: 1px solid #ddd;">
-        <input type="text" id="user-input" placeholder="Digite sua mensagem..." style="width: 70%; padding: 5px; border: 1px solid #ccc; border-radius: 4px;">
-        <button onclick="enviarMensagem()" style="width: 25%; padding: 6px; background: #007bff; color: rgb(180, 142, 142); border: none; border-radius: 4px; cursor: pointer;">Enviar</button>
-    </div>
-</div>
-
-<script>
-// Funções do Chatbot
-function enviarMensagem() {
-    const input = document.getElementById('user-input');
-    const mensagem = input.value.trim();
-    
-    if (mensagem === '') return;
-    
-    // Adiciona mensagem do usuário
-    const chatMessages = document.getElementById('chat-messages');
-    chatMessages.innerHTML += `<div style="text-align: right; margin: 5px 0;"><strong>Você:</strong> ${mensagem}</div>`;
-    
-    // Resposta do assistente
-    let resposta = gerarResposta(mensagem);
-    chatMessages.innerHTML += `<div style="margin: 5px 0;"><strong>Assistente:</strong> ${resposta}</div>`;
-    
-    // Limpa input e rola para baixo
-    input.value = '';
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-function fecharChat() {
-    document.getElementById('chatbot').style.display = 'none';
-}
-
-function gerarResposta(mensagem) {
-    const msg = mensagem.toLowerCase();
-    
-    if (msg.includes('ola') || msg.includes('oi') || msg.includes('olá')) {
-        return 'Olá! Bem-vindo ao site de filmes! 🎬';
-    } else if (msg.includes('filme') || msg.includes('recomenda')) {
-        return 'Recomendo ver nossos filmes em destaque na página principal!';
-    } else if (msg.includes('ajuda')) {
-        return 'Posso ajudar com informações sobre filmes! Digite "filmes" ou "recomendações".';
-    } else if (msg.includes('como funciona')) {
-        return 'Este site mostra informações sobre diversos filmes. Navegue e descubra!';
-    } else {
-        return 'Desculpe, sou um assistente básico. Tente perguntar sobre filmes! 🎥';
-    }
-}
-
-// Enter envia mensagem
-document.getElementById('user-input').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        enviarMensagem();
-    }
-});
-</script>
 
 
 
-
-
-
-
-
-
-
-
-
-
+<iframe 
+    src="agent.html" 
+    width="420" 
+    height="650"
+    style="border: none; border-radius: 20px; margin: 20px;"
+    title="Assistente IA">
+</iframe>
 
 
 
